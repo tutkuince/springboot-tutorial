@@ -4,6 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication	// Composed of @EnableAutoConfiguration, @ComponenetScan, @Configuration
+
+// More on Component Scanning
+// @SpringBootApplication(scanBasePackages= {"io.spring.utils", "edu.cmu.wean"})
 public class SpringbootTutorialApplication {
 
 	public static void main(String[] args) {
