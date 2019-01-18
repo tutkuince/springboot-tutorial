@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloRestController {
+	
+	// There are 10+ Spring Boot Actuator endpoints
+	// /auditevents -> Audit events for your application
+	// /beans -> List of all beans registered in the Spring application context
+	// /mappings -> List of all @RequestMapping paths
 
 	// expose "/" that return "Hello World"
 	@GetMapping("/")
