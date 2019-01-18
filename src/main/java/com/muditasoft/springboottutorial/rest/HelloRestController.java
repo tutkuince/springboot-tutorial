@@ -2,6 +2,7 @@ package com.muditasoft.springboottutorial.rest;
 
 import java.time.LocalDateTime;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,6 +13,13 @@ public class HelloRestController {
 	// /auditevents -> Audit events for your application
 	// /beans -> List of all beans registered in the Spring application context
 	// /mappings -> List of all @RequestMapping paths
+	
+	// Inject properties for: developer.name and department.name
+	@Value("${developer.name}")
+	private String developerName;
+	
+	@Value("${department.name}")
+	private String departmentName;
 
 	// expose "/" that return "Hello World"
 	@GetMapping("/")
@@ -29,5 +37,11 @@ public class HelloRestController {
 	@GetMapping("/fortune")
 	public String getDailyFortune() {
 		return "Today is your lucky day!";
+	}
+	
+	// expose new endpoint for "department" info
+	@GetMapping("/departmentinfo")
+	public String getDepartmentInfo() {
+		return "Developer name: " + developerName + ", Department name: " + departmentName;
 	}
 }
